@@ -16,9 +16,9 @@ The project uses pnpm package management
 If you do not have pnpm installed, you can use npm i -g pnpm
 
 # Clone Project
-git clone -b ....
+git clone -b https://github.com/Slash214/JaneJane-admin.git
 # Go to the project directory
-cd xxx
+cd JaneJane-admin
 # Install dependency
 pnpm i
 # Local development start-up project

@@ -16,9 +16,9 @@
 如你未安装pnpm 可以使用npm i -g pnpm 安装
 
 # 克隆项目
-git clone -b ....
+git clone -b https://github.com/Slash214/JaneJane-admin.git
 # 进入项目目录
-cd xxx
+cd JaneJane-admin
 # 安装依赖
 pnpm i
 # 本地开发 启动项目
