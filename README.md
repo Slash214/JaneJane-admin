@@ -23,20 +23,19 @@ cd xxx
 pnpm i
 # Local development start-up project
 pnpm run dev
-` ` `
+```
 
 Thank you
 | Project                                                          |
 | ---------------------------------------------------------------- |
-| [vue](https://github.com/vuejs/vue)                              |
+| [vue](https://github.com/vuejs/vue)                              |              
 | [element-plus](https://github.com/element-plus/element-plus)     |
 | [vite](https://cn.vitejs.dev/guide/)                             |
 | [mock](https://github.com/nuysoft/Mock)                          |
 | [axios](https://github.com/axios/axios)                          |
 
-
 ## Advantages and precautions
-` ` `
+
 vue-JaneJane-admin has the following advantages over other open source admin frameworks:
 1. Simple and easy to use integration basic template can be developed quickly
 1. Supports the front-end control route permission intelligence and back-end control route permission all modes

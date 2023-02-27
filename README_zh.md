@@ -36,7 +36,6 @@ pnpm run dev
 
 
 ## 优势及注意事项
-```
 vue-JaneJane-admin 对比其他开源 admin 框架有如下优势:
 1. 简单易上手 集成基础模板可以快速开发
 1. 支持前端控制路由权限 intelligence、后端控制路由权限 all 模式
