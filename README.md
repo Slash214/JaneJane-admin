@@ -2,6 +2,9 @@
 <h1> vue-JaneJane-admin (element-ui) </h1>
 </div>
 
+## Language
+[Chinese](./README_zh.md) | [English](./README.md)
+ 
 ## Demo address
 
 - [🎉 vue3.x + Vite4 + TypeScript + element-ui (free commercial, PC supported)]()
