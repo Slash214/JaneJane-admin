@@ -6,8 +6,7 @@
     :hide-timeout="0"
   >
     <template #title>
-      <svg-icon v-if="menu.meta.icon" :name="menu.meta.icon" size="24">
-      </svg-icon>
+      <el-icon><House /></el-icon>
       <span class="ml20">{{ menu.meta.title }}</span>
     </template>
     <menu-item
@@ -17,8 +16,7 @@
     ></menu-item>
   </el-sub-menu>
   <el-menu-item v-else :index="menu.path">
-    <svg-icon v-if="menu.meta.icon" :name="menu.meta.icon" size="24">
-    </svg-icon>
+    <el-icon><House /></el-icon>
     <template #title>
       <span class="ml20">{{ menu.meta.title }}</span>
     </template>
@@ -26,6 +24,9 @@
 </template>
 
 <script setup lang="ts">
+import { Menu, House, WarningFilled } from '@element-plus/icons-vue';
+
+
 const props = defineProps({
   menu: {
     type: Object,
@@ -36,7 +37,6 @@ const props = defineProps({
 
 <style scoped>
 .ml20 {
-
-	margin-left: 10px;
+  margin-left: 10px;
 }
 </style>

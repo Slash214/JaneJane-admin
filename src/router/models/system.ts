@@ -9,7 +9,7 @@ const System: Array<RouteRecordRaw> = [
 	},
 	{
 		path: '/404',
-		meta: { title: '404', icon: 'icon-jinggao' },
+		meta: { title: '404', icon: 'WarningFilled' },
 		component: () => import("views/system/404.vue")
 	},
 	{

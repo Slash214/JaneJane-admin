@@ -5,7 +5,7 @@ const Other: Array<RouteRecordRaw> = [
 	{
 		path: '/other',
 		component: layout,
-		meta: { title: '其他', icon: 'icon-xiangzi', activeMenu: true },
+		meta: { title: '其他', icon: 'Menu', activeMenu: true },
 		redirect: '/other/test',
 		children: [
 			{

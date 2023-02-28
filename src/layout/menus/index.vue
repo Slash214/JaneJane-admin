@@ -2,8 +2,12 @@
   <el-menu
     router
     class="layout-menu"
+    :style="{ 'width': useStore.isCollapse ? '70px' : '240px'}"
     :default-active="activeMenu"
     :default-openeds="openeds"
+    :collapse="useStore.isCollapse"
+    :collapse-transition="false"
+    
   >
     <div class="logo">后台模板</div>
     <menu-item
@@ -15,12 +19,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import MenuItem from "./MenuItem.vue";
+import { useMenuStore } from '@/store/menu'
 
 const route = useRoute();
 const router = useRouter();
+const useStore = useMenuStore()
 
 // 默认打开菜单
 const openeds = ["/"];
@@ -28,7 +34,6 @@ const openeds = ["/"];
 const allRoutes = router.options.routes.filter((e) => {
   return e.path !== "/login" && e.path !== "/:pathMatch(.*)";
 });
-
 console.log(allRoutes);
 
 const activeMenu = computed(() => {
@@ -39,10 +44,10 @@ const activeMenu = computed(() => {
 </script>
 
 <style scoped lang="scss">
+$width: 240px;
+$widths: 100px;
 .layout-menu {
-  width: 240px;
   height: 100%;
-
   .logo {
     background-color: #409eff;
 	color: #fff;

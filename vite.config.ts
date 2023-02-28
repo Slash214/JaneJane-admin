@@ -4,22 +4,38 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Inspect from 'vite-plugin-inspect'
 
+const pathSrc = path.resolve(__dirname, 'src')
 
 export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      imports: ['vue'],
+      resolvers: [
+        ElementPlusResolver(),
+        IconsResolver({
+          prefix: 'Icon'
+        })
+      ],
+      dts: path.resolve(pathSrc, 'auto-imports.d.ts'),
     }),
     Components({
-      resolvers: [ElementPlusResolver()]
+      resolvers: [
+        IconsResolver({
+          enabledCollections: ['ep']
+        }),
+        ElementPlusResolver()
+      ],
+      dts: path.resolve(pathSrc, 'auto-imports.d.ts'),
     }),
-    createSvgIconsPlugin({
-      iconDirs: [path.resolve(__dirname, './src/icons/svg')],
-      symbolId: '[name]'
-    })
+    Icons({
+      autoInstall: true
+    }),
+    Inspect()
   ],
   resolve: {
     alias: {

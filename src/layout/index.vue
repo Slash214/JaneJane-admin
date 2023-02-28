@@ -1,8 +1,10 @@
 <template>
   <el-container class="layout">
-    <el-aside><menus></menus></el-aside>
+    <el-aside :style="{ 'width': useStore.isCollapse ? '70px' : '240px'}"><menus></menus></el-aside>
     <el-container class="main">
-      <el-header>顶部</el-header>
+      <el-header>
+        <headers></headers>
+      </el-header>
       <el-main>
         <router-view></router-view>
       </el-main>
@@ -12,6 +14,12 @@
 
 <script setup lang="ts">
 import menus from './menus/index.vue'
+import headers from './headers/index.vue'
+import { useMenuStore } from '@/store/menu'
+
+const useStore = useMenuStore()
+
+
 </script>
 
 <style scoped lang="scss">
@@ -21,15 +29,14 @@ import menus from './menus/index.vue'
   overflow: hidden;
 
   .el-aside {
-    width: 240px;
     color: #fff;
+    overflow-x: hidden;
   }
 
   .main {
     .el-header {
       width: 100%;
       height: 70px;
-      line-height: 70px;
       background-color: #fff;
     }
 
