@@ -28,6 +28,13 @@ export default defineConfig({
       components: path.resolve(__dirname, "./src/components")
     }
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/styles/common.scss";'
+      }
+    }
+  },
   server: {
     open: true,
     port: 1987,
