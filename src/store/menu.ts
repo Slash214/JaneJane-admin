@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 
 export const useMenuStore = defineStore('menu', () => {
-	const isCollapse = ref(true)
+	const isCollapse = ref(false)
 
 	function changeCollapse() {
 		isCollapse.value = !isCollapse.value
