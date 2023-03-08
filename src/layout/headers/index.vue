@@ -1,14 +1,12 @@
 <template>
     <div class="nav">
         <div class="nav-left">
-            <el-icon class="pointer" size="20" @click="useStore.changeCollapse">
+            <el-icon class="pointer mr20" size="20" @click="useStore.changeCollapse">
                 <Fold v-if="!useStore.isCollapse" />
                 <Expand v-if="useStore.isCollapse" />
             </el-icon>
 
-            <el-breadcrumb class="ml20" separator-icon="ArrowRight">
-                <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            </el-breadcrumb>
+            <Crumb></Crumb>
         </div>
         <div class="nav-right">
             <el-icon @click="OpenFullScreen" size="16" class="pointer"><FullScreen /></el-icon>
@@ -37,14 +35,8 @@
 
 <script setup lang="ts">
 import { useMenuStore } from '@/store/menu'
-import { ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-
+import Crumb from './Crumb.vue'
 const useStore = useMenuStore()
-const route = useRoute()
-const router = useRouter()
-
-const flag = ref(false)
 
 /**
  * 进入全屏
@@ -55,7 +47,7 @@ const OpenFullScreen = () => {
     // console.log('d', document.fullscreenElement)
 }
 
-console.log(router.options)
+
 </script>
 
 <style scoped lang="scss">
