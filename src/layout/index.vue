@@ -31,6 +31,7 @@ const useStore = useMenuStore()
   .el-aside {
     color: #fff;
     overflow-x: hidden;
+    transition: width cubic-bezier(0, 1.03, 0.1, 1.13) 0.3s;
   }
 
   .main {

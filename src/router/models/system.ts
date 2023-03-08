@@ -1,3 +1,8 @@
+/**
+ * @author 爱呵呵
+ * @description 系统目录路由 404，403，登陆...
+ */
+
 import { RouteRecordRaw } from "vue-router";
 
 const System: Array<RouteRecordRaw> = [

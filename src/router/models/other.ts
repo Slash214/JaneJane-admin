@@ -1,3 +1,8 @@
+/**
+ * @author 爱呵呵
+ * @description 其他页面模块
+ */
+
 import { RouteRecordRaw } from "vue-router";
 import layout from '@/layout/index.vue'
 

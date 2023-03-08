@@ -3,12 +3,12 @@ import NProgress from '../utils/Nprogress'
 import Layout from '@/layout/index.vue'
 import { Storage } from '../utils/Storage'
 
-import { System, Other } from './models'
+import { System, Other, Elements } from './models'
 
 const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/',
-		meta: {title: '首页', icon: '<el-icon><House /></el-icon>' },
+		meta: {title: '首页', icon: 'HomeFilled' },
 		component: Layout,
 		redirect: '/index',
 		children: [
@@ -20,6 +20,7 @@ const routes: Array<RouteRecordRaw> = [
 		]
 	},
 	...Other,
+	...Elements,
 	...System
 ]
 
@@ -28,11 +29,13 @@ const router: Router = createRouter({
 	routes
 })
 
+// 白名单
 const whiteList = ['/login']
 
 // 获取token
 const token = Storage.getItem('token')
 console.log('token', token)
+
 
 router.beforeEach((to, __from, next) => {
 	NProgress.start()
